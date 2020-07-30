@@ -595,6 +595,12 @@ category 列表：
 
 <Route author="raptazure" example="/hitwh/today" path="hitwh/today" />
 
+## 合肥工业大学
+
+### 通知公告
+
+<Route author="log-e" example="/hfut/tzgg" path="/hfut/tzgg"/>
+
 ## 河海大学
 
 ### 河海大学图书馆 - 新闻动态
@@ -1784,6 +1790,10 @@ type 列表：
 ### 上海微系统与信息技术研究所学术活动
 
 <Route author="HenryQW" example="/cas/sim/academic" path="/cas/sim/academic"/>
+
+### 中国科学院信息工程研究所 第二研究室 处理架构组 知识库
+
+<Route author="renzhexigua" example="/cas/mesalab/kb" path="/cas/mesalab/kb"/>
 
 ## 中国农业大学
 
