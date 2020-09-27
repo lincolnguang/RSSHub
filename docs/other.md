@@ -121,6 +121,12 @@ pageClass: routes
 
 <Route author="proletarius101" example="/iyouport/osint" path="/iyouport/:category?"/>
 
+## MITRE
+
+### 全部出版物
+
+<Route author="sbilly" example="/mitre/publications" path="/mitre/publications" />
+
 ## MobData
 
 ### 分析报告
@@ -236,6 +242,12 @@ type 为 all 时，category 参数不支持 cost 和 free
 | all  | rec  |
 
 </Route>
+
+## 爱 Q 生活网
+
+### 最近更新
+
+<Route author="nczitzk" example="/3k8/latest" path="/3k8/latest"/>
 
 ## 爱发电
 
@@ -372,7 +384,35 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 ### 图文 - 编辑精选
 
-<Route author="xizeyoupan" example="/coolapk/tuwen" path="/coolapk/tuwen" />
+<Route author="xizeyoupan" example="/coolapk/tuwen" path="/coolapk/tuwen">
+
+::: tip
+每晚更新，更新较慢。
+:::
+
+</Route>
+
+### 新鲜图文
+
+<Route author="xizeyoupan" example="/coolapk/tuwen-xinxian" path="/coolapk/tuwen-xinxian"/>
+
+### 看看号 - 图文 & 动态
+
+<Route author="xizeyoupan" example="/coolapk/dyh/1524" path="/coolapk/dyh/:dyhId" :paramsDesc="['看看号ID']">
+
+::: tip
+仅限于采集**站内订阅**的看看号的**图文及动态**内容。看看号 ID 可在看看号界面右上分享 - 复制链接得到。
+:::
+
+</Route>
+
+### 话题 - 图文 & 动态
+
+<Route author="xizeyoupan" example="/coolapk/huati/酷安夜话" path="/coolapk/huati/:tag" :paramsDesc="['话题名称']"/>
+
+### 用户 - 图文 & 动态
+
+<Route author="xizeyoupan" example="/coolapk/user/3177668/dynamic" path="/coolapk/user/:uid/dynamic" :paramsDesc="['uid,在个人界面右上分享-复制链接获取']"/>
 
 ## 快递 100
 
@@ -481,6 +521,18 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 <Route author="cc798461" example="/moxingnet" path="/moxingnet"/>
 
+## 诺贝尔奖
+
+### 获奖名单
+
+<Route author="nczitzk" example="/nobelprize" path="/nobelprize/:caty" :paramsDesc="['类别，见下表，默认为全部']">
+
+| 物理学  | 化学      | 生理学或医学           | 文学       | 和平  | 经济学            |
+| ------- | --------- | ---------------------- | ---------- | ----- | ----------------- |
+| physics | chemistry | physiology-or-medicine | literature | peace | economic-sciences |
+
+</Route>
+
 ## 且听风吟福利
 
 ### 分类
@@ -524,6 +576,12 @@ type 为 all 时，category 参数不支持 cost 和 free
 | ja   | en   |
 
 </Route>
+
+## 上海证券交易所
+
+### 上市公司信息最新公告披露
+
+<Route author="alienmao" example="/sse/disclosure/beginDate=2018-08-18&endDate=2020-08-25&productId=600696" path="/sse/disclosure/:query?"  :paramsDesc="['筛选条件，见示例']" />
 
 ## 上证债券信息网
 
@@ -596,6 +654,12 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### 新闻动态
 
 <Route author="kt286" example="/tprtc/news" path="/tprtc/news"/>
+
+## 无讼案例
+
+### 案例
+
+<Route author="alienmao" example="/itslaw/judgements/regulation+1121495748+13+中华人民共和国公司法（2018）第二十一条" path="/itslaw/judgements/:conditions" :paramsDesc="['筛选条件，见示例']"/>
 
 ## 新冠肺炎疫情新闻动态
 

@@ -403,6 +403,17 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 :::
 </Route>
 
+## pixiv-fanbox
+
+<Route author="sgqy" example="/fanbox/otomeoto" path="/fanbox/:user?" :paramsDesc="['用户名, 可在用户主页 URL 中找到. 默认为官方资讯']"/>
+::: warning 付费墙注意
+
+由于 fanbox 专为付费用户设计，要查看已经付费的内容只能自建。
+
+自建设置：环境变量`FANBOX_SESSION_ID`对应 cookies 中的`FANBOXSESSID`。
+
+:::
+
 ## Popi 提问箱
 
 ### 提问箱新回答
@@ -653,6 +664,10 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 </Route>
 
+### 日记最新回应
+
+<Route author="nczitzk" example="/douban/replies/xiaoyaxiaoya" path="/douban/replies/:uid" :paramsDesc="['用户id，可在用户日记页 URL 中找到']"/>
+
 ### 话题
 
 <Route author="LogicJake" example="/douban/topic/48823" path="/douban/topic/:id/:sort?" :paramsDesc="['话题id','排序方式，hot或new，默认为new']"/>
@@ -892,16 +907,17 @@ rule
 ## 新榜
 
 ::: warning 注意
-部署时需要配置 NEWRANK_USERNAME、NEWRANK_PASSWORD，具体见部署文档
+部署时需要配置 NEWRANK_COOKIE，具体见部署文档
+请勿过高频抓取，新榜疑似对每天调用 token 总次数进行了限制，超限会报错
 :::
 
 ### 微信公众号
 
-<Route author="BossDoge" example="/newrank/wechat/chijiread" path="/newrank/wechat/:wxid" :paramsDesc="['微信号，若微信号与新榜信息不一致，以新榜为准']" anticrawler="1"/>
+<Route author="lessmoe" example="/newrank/wechat/chijiread" path="/newrank/wechat/:wxid" :paramsDesc="['微信号，若微信号与新榜信息不一致，以新榜为准']" anticrawler="1"/>
 
 ### 抖音短视频
 
-<Route author="BossDoge" example="/newrank/douyin/110266463747" path="/newrank/douyin/:dyid" :paramsDesc="['抖音ID，可在新榜账号详情 URL 中找到']" anticrawler="1"/>
+<Route author="lessmoe" example="/newrank/douyin/110266463747" path="/newrank/douyin/:dyid" :paramsDesc="['抖音ID，可在新榜账号详情 URL 中找到']" anticrawler="1"/>
 
 ::: warning 注意
 免费版账户抖音每天查询次数 20 次，如需增加次数可购买新榜会员或等待未来多账户支持
